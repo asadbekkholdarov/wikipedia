@@ -1,0 +1,27 @@
+<div *ngIf="gitInfo.length">
+  <div class="ui container">
+    <!-- profile -->
+    <div class="ui link cards">
+      <div class="card">
+        <div class="image">
+          <img width="300" height="300" [src]="gitInfo.avatar_url" />
+        </div>
+        <div class="content">
+          <div class="header">{{ gitInfo.login }}</div>
+
+          <div class="description">
+            {{ gitInfo.company }}
+          </div>
+        </div>
+        <div class="extra content">
+          <span class="right floated">{{ gitInfo.created_at | date }} </span>
+          <span>
+            <i class="location icon"></i>
+            {{ gitInfo.location }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- info -->
+  </div>
+</div>

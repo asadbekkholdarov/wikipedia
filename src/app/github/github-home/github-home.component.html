@@ -1,0 +1,7 @@
+<div class="ui container">
+  <app-github-search-bar
+    (submittedUser)="getUsername($event)"
+  ></app-github-search-bar>
+
+  <app-github-page-list [gitInfo]="gitInfo"></app-github-page-list>
+</div>

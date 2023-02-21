@@ -1,0 +1,4 @@
+<div class="ui container">
+  <app-wiki-search-bar (submittedItem)="getItem($event)"></app-wiki-search-bar>
+  <app-wiki-page-list [term]="term" [wikis]="wikis"></app-wiki-page-list>
+</div>

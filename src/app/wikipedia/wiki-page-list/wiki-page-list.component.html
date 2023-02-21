@@ -1,0 +1,30 @@
+<div *ngIf="wikis.length; else nodata">
+  <br />
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>WordSize</th>
+        <th>Content</th>
+        <th>Time stamp</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let wiki of wikis">
+        <td>
+          <a
+            target="_blank"
+            [href]="'https://en.wikipedia.org?curid=' + wiki.pageid"
+            >{{ wiki.title }}</a
+          >
+        </td>
+        <td>{{ wiki.pageid }}</td>
+        <td [innerHTML]="wiki.snippet.slice(0, 220)"></td>
+        <td>{{ wiki.timestamp | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #nodata>Let's search it</ng-template>
